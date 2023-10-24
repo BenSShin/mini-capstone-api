@@ -5,5 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def one_product
+    @product = Product.first
+    render :show
   end
 end
