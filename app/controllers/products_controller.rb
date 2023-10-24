@@ -3,4 +3,7 @@ class ProductsController < ApplicationController
     @products = Product.all
     render :index
   end
+
+  def one_product
+  end
 end
