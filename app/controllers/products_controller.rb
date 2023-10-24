@@ -8,4 +8,9 @@ class ProductsController < ApplicationController
     @product = Product.first
     render :show
   end
+
+  def second_product
+    @product = Product.second
+    render :show
+  end
 end
