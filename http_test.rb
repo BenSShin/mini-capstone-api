@@ -16,8 +16,12 @@ def index_test
   index = response.parse
   product = Product.first
   product_keys = []
-  product.map { |k, v| product_keys << k }
   pp product_keys
 end
 
 # code does not work since can't pull data from Product class since its in a file which i dont knwo
+# prob have to implement comparison values manually
+
+def create_test
+  response = HTTP.post("http://localhost:3000/products.json")
+end
