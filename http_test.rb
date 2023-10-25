@@ -23,5 +23,11 @@ end
 # prob have to implement comparison values manually
 
 def create_test
-  response = HTTP.post("http://localhost:3000/products.json")
+  response = HTTP.post("http://localhost:3000/products.json",
+                       :form => {
+                         :name => "#{input_name}",
+                         :price => "#{input_price}",
+                         :image_url => "#{input_image_url}",
+                         :description => "#{input_description}",
+                       })
 end
