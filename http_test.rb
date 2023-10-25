@@ -24,10 +24,14 @@ end
 
 def create_test
   response = HTTP.post("http://localhost:3000/products.json",
-                       :form => {
-                         :name => "#{input_name}",
-                         :price => "#{input_price}",
-                         :image_url => "#{input_image_url}",
-                         :description => "#{input_description}",
-                       })
+                       :body => "name=#{input_name}&")
+end
+
+def update_test
+  pp "Whichc id would you like updated?"
+  id = gets.chomp
+  response = HTTP.get("http://localhost:3000/products/#{id}.json")
+  data = response.parse
+
+  response = HTTP.patch("http://localhost:3000/products/#{id}.json", :body => "")
 end
