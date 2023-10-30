@@ -16,4 +16,13 @@ class Product < ApplicationRecord
     total = price + tax
     return total
   end
+
+  validates :name, presence: true
+  validates :price, presence: true
+  validates :description, presence: true
+  validates :name, length: { in: 2..30 }
+  validates :name, prescence: true
+  validates :description, length: { in: 5..300 }
+  validates :price, numericality: { greater_than: 0 }
+  validates_format_of :image_url, :with => %r{\.(png|jpg|jpeg)$}i, :message => "must have a valid file type", multiline: true
 end
