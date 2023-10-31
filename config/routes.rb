@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   delete "/products/:id" => "products#destroy"
   get "/supplier" => "suppliers#index"
   get "/supplier/:id" => "suppliers#show"
+  post "/supplier" => "supplier#create"
 end
