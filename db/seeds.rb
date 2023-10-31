@@ -14,3 +14,7 @@
 
 # product = Product.new({ name: "brownies", price: 5, image_url: "http.//google.com", description: "fudgy and gooey brownies good with icecream or by itself" })
 # product.save
+
+# supplier = Supplier.create(name: "Josh Hammell", email: "joshH12@gmail.com", phone_number: "(123)423-2342")
+
+# supplier = Supplier.create(name: "Mike Han", email: "mikeH12@gmail.com", phone_number: "(123)542-2484")
