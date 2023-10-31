@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
       price: params["price"],
       description: params["description"],
       supplier_id: params["supplier_id"],
+      in_stock: params["in_stock"],
     )
     render :show
   end
@@ -25,6 +26,8 @@ class ProductsController < ApplicationController
       name: params["name"] || @product.name,
       price: params["price"] || @product.price,
       description: params["description"] || @product.description,
+      in_stock: params["in_stock"] || @product.in_stock,
+      supplier_id: params["supplier_id"] || @product.supplier_id,
     )
     render :show
   end
