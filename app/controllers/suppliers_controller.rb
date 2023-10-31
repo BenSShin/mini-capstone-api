@@ -17,4 +17,14 @@ class SuppliersController < ApplicationController
     )
     render :show
   end
+
+  def update
+    @supplier = Supplier.find_by(id: params["id"])
+    @supplier.update(
+      name: params["name"] || @supplier.name,
+      email: params["email"] || @supplier.email,
+      phone_number: params["phone_number"] || @supplier.phone_number,
+    )
+    render :show
+  end
 end
