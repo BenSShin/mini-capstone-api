@@ -18,3 +18,6 @@
 # supplier = Supplier.create(name: "Josh Hammell", email: "joshH12@gmail.com", phone_number: "(123)423-2342")
 
 # supplier = Supplier.create(name: "Mike Han", email: "mikeH12@gmail.com", phone_number: "(123)542-2484")
+
+# image = Image.create(url: "http.//google.com", product_id: 1)
+# image = Image.create(url: "some image", product_id: 1)
