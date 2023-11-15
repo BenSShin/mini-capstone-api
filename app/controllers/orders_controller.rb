@@ -1,22 +1,28 @@
 class OrdersController < ApplicationController
   def index
-    @orders = Order.all
+    @orders = Order.where(user_id: current_user.id)
     render :index
   end
 
   def show
     @order = Order.find_by(id: params["id"])
-    render :show
+    if current_user.id && current_user.id == @order.user_id
+      render :show
+    else
+      render json: { message: "You must be logged in to view your orders" }
+    end
   end
 
   def create
     @order = Order.create(
-      user_id: params["user_id"],
+      user_id: current_user.id,
       product_id: params["product_id"],
       quantity: params["quantity"],
-      subtotal: params["subtotal"],
-      tax: params["tax"],
-      total: params["total"],
+    )
+    @order.update(
+      subtotal: @order.subtotal,
+      tax: @order.tax,
+      total: @order.total,
     )
     render :show
   end
