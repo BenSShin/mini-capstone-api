@@ -9,15 +9,15 @@ class OrdersController < ApplicationController
     if current_user.id && current_user.id == @order.user_id
       render :show
     else
-      render json: { message: "You must be logged in to view your orders" }
+      render json: { message: "You may only view your own orders." }
     end
   end
 
   def create
     @order = Order.create(
       user_id: current_user.id,
-      product_id: params["product_id"],
-      quantity: params["quantity"],
+      product_id: params[:product_id],
+      quantity: params[:quantity],
     )
     @order.update(
       subtotal: @order.subtotal,
