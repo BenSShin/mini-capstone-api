@@ -25,6 +25,7 @@ class Product < ApplicationRecord
   # def image
   #   Image.where(product_id: id)
   # end
+  has_many :orders
 
   # validates :name, presence: true
   # validates :price, presence: true
