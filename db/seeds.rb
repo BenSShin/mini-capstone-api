@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# product = Product.new({ name: "chocolate chip cookies", price: 4, image_url: "http.//google.com", description: "warm cookie that your grandma would be proud of" })
+# product = Product.new({ name: "chocolate chip cookies", price: 4, description: "warm cookie that your grandma would be proud of" })
 # product.save
 
-# product = Product.new({ name: "banana bread", price: 3, image_url: "http.//google.com", description: "moist banana bread with walnuts and chopped chocolate" })
+# product = Product.new({ name: "banana bread", price: 3, description: "moist banana bread with walnuts and chopped chocolate" })
 # product.save
 
-# product = Product.new({ name: "brownies", price: 5, image_url: "http.//google.com", description: "fudgy and gooey brownies good with icecream or by itself" })
+# product = Product.new({ name: "brownies", price: 5, description: "fudgy and gooey brownies good with icecream or by itself" })
 # product.save
 
 # product = Product.create({ name: "macaroons", price: 12, description: "Box of 5 delicate macaroons with a variety of fillings", inventory: })
