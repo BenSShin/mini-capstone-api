@@ -9,7 +9,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "index" do
-    get "/products.json", headers: { Authorization: "Bearer #{@jwt}" }
+    get "/products.json"
     assert_response 200
 
     data = JSON.parse(response.body)
@@ -17,7 +17,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "show" do
-    get "/products/#{Product.first.id}.json", headers: { Authorization: "Bearer #{@jwt}" }
+    get "/products/#{Product.first.id}.json"
     assert_response 200
 
     data = JSON.parse(response.body)
@@ -35,6 +35,8 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       assert_equal "test description", data["description"]
       assert_equal 3, data["in_stock"]
     end
+    post "/products.json"
+    assert_response 401
   end
 
   test "update" do
@@ -44,6 +46,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     data = JSON.parse(response.body)
     assert_equal "Updated name", data["name"]
+
+    patch "/products/#{product.id}.json"
+    assert_response 401
   end
 
   test "destroy" do
@@ -51,5 +56,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       delete "/products/#{Product.first.id}.json", headers: { Authorization: "Bearer #{@jwt}" }
       assert_response 200
     end
+    delete "/products/#{Product.first.id}.json"
+    assert_response 401
   end
 end
