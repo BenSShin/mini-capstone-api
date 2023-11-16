@@ -21,6 +21,8 @@
 
 # supplier = Supplier.create(name: "Mike Han", email: "mikeH12@gmail.com", phone_number: "(123)542-2484")
 
+# user = User.create(name: "Ben Shin", email: "ben@example.com", password: "password", password_confirmation: "password", admin: true)
+
 # image = Image.create(url: "https://www.foodandwine.com/thmb/4_UScMzHQCxZzACBITHHmT_EM3U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Chocolate-Chunk-Halwah-Cookies-FT-RECIPE0923-1f8df755df6d468da98887aa846a2fe3.jpg", product_id: 1)
 # image = Image.create(url: "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/62298.jpg", product_id: 1)
 

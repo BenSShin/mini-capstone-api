@@ -9,12 +9,12 @@ class Product < ApplicationRecord
 
   def tax
     tax = price * 0.09
-    return tax
+    return tax.round(2)
   end
 
   def total
     total = price + tax
-    return total
+    return total.round(2)
   end
 
   belongs_to :supplier
