@@ -13,31 +13,32 @@
 
 # supplier = Supplier.create(name: "Mike Han", email: "mikeH12@gmail.com", phone_number: "(123)542-2484")
 
-# user = User.create(name: "Ben Shin", email: "ben@example.com", password: "password", password_confirmation: "password", admin: true)
+#user creation
+User.create!([{ name: "Ben Shin", email: "ben@example.com", password: "password", password_confirmation: "password", admin: true }, { name: "Alex Shin", email: "alex@gmail.com", password: "password", password_confirmation: "password", admin: true }])
 
-# image = Image.create(url: "https://www.foodandwine.com/thmb/4_UScMzHQCxZzACBITHHmT_EM3U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Chocolate-Chunk-Halwah-Cookies-FT-RECIPE0923-1f8df755df6d468da98887aa846a2fe3.jpg", product_id: 1)
-# image = Image.create(url: "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/62298.jpg", product_id: 1)
+Image.create!([{ url: "https://www.foodandwine.com/thmb/4_UScMzHQCxZzACBITHHmT_EM3U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Chocolate-Chunk-Halwah-Cookies-FT-RECIPE0923-1f8df755df6d468da98887aa846a2fe3.jpg", product_id: 1 },
+               { url: "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/62298.jpg", product_id: 1 }])
 
 #canele image
-Image.create!([{url: "https://www.homecookingadventure.com/wp-content/uploads/2022/01/caneles_de_bordeaux_main.jpg", product_id: 22},
-{url: "https://cdn.tasteatlas.com/images/dishes/62f83e07c05a47f9951a2dfbd32db73f.jpg", product_id: 22}])
+Image.create!([{ url: "https://www.homecookingadventure.com/wp-content/uploads/2022/01/caneles_de_bordeaux_main.jpg", product_id: 22 },
+               { url: "https://cdn.tasteatlas.com/images/dishes/62f83e07c05a47f9951a2dfbd32db73f.jpg", product_id: 22 }])
 # macaroon image
-image = Image.create(url: "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/11/03/colorful-french-macarons-bakery-box-wood-surface-.jpg.rend.hgtvcom.1280.1280.suffix/1635922448414.jpeg", product_id: 4)
-image = Image.create(url: "https://www.pauldmv.com/wp-content/uploads/2022/12/PAUL_Macarons_Large-Silo_1200x800.jpg", product_id: 4)
+Image.create!([{ url: "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/11/03/colorful-french-macarons-bakery-box-wood-surface-.jpg.rend.hgtvcom.1280.1280.suffix/1635922448414.jpeg", product_id: 4 },
+               { url: "https://www.pauldmv.com/wp-content/uploads/2022/12/PAUL_Macarons_Large-Silo_1200x800.jpg", product_id: 4 }])
 # carrotcake image
-image = Image.create(url: "https://inbloombakery.com/wp-content/uploads/2022/04/carrot-cake-featured-image.jpg", product_id: 16)
-image = Image.create(url: "https://sugarspunrun.com/wp-content/uploads/2022/02/The-Best-Carrot-Cake-Recipe-1-of-1-4.jpg", product_id: 16)
+Image.create!([{ url: "https://inbloombakery.com/wp-content/uploads/2022/04/carrot-cake-featured-image.jpg", product_id: 16 },
+               { url: "https://sugarspunrun.com/wp-content/uploads/2022/02/The-Best-Carrot-Cake-Recipe-1-of-1-4.jpg", product_id: 16 }])
 # brownie images
-image = Image.create(url: "https://mytxkitchen.com/wp-content/uploads/2022/08/Fudgy-Chocolate-Brownies-4.jpg", product_id: 3)
-image = Image.create(url: "https://www.southernliving.com/thmb/eLSgazITlYrKf9EFTR9y1L2mSxg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Southern-Living-Homemade_Brownies_023-3c582f0fba1842dd918a3d9c26c1ab59.jpg", product_id: 3)
+Image.create!([{ url: "https://mytxkitchen.com/wp-content/uploads/2022/08/Fudgy-Chocolate-Brownies-4.jpg", product_id: 3 },
+               { url: "https://www.southernliving.com/thmb/eLSgazITlYrKf9EFTR9y1L2mSxg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Southern-Living-Homemade_Brownies_023-3c582f0fba1842dd918a3d9c26c1ab59.jpg", product_id: 3 }])
 # banana bread images
-image = Image.create(url: "https://www.hauteandhealthyliving.com/wp-content/uploads/2023/02/2-banana-bread-recipe-8-1.jpg", product_id: 3)
-image = Image.create(url: "https://joyfoodsunshine.com/wp-content/uploads/2019/03/best-banana-bread-recipe-1x1-2-500x500.jpg", product_id: 3)
+Image.create!([{ url: "https://www.hauteandhealthyliving.com/wp-content/uploads/2023/02/2-banana-bread-recipe-8-1.jpg", product_id: 3 },
+               { url: "https://joyfoodsunshine.com/wp-content/uploads/2019/03/best-banana-bread-recipe-1x1-2-500x500.jpg", product_id: 3 }])
 
-# category = Category.create(name: "pasteries")
-# category = Category.create(name: "bread")
+#added categories
+Category.create!([{ name: "pasteries" },
+                  { name: "bread" }])
 
-# categoryproduct = CategoryProduct.create(product_id: 1, category_id: 1)
-# categoryproduct = CategoryProduct.create(product_id: 2, category_id: 1)
-
-
+#added categoryproducts
+CategoryProduct.create!([{ product_id: 1, category_id: 1 },
+                         { product_id: 2, category_id: 1 }])
