@@ -34,5 +34,4 @@ class Product < ApplicationRecord
   # validates :name, prescence: true
   # validates :description, length: { in: 5..300 }
   # validates :price, numericality: { greater_than: 0 }
-  # validates_format_of :image_url, :with => %r{\.(png|jpg|jpeg)$}i, :message => "must have a valid file type", multiline: true
 end

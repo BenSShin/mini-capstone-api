@@ -41,3 +41,9 @@
 # # banana bread images
 # image = Image.create(url: "https://www.hauteandhealthyliving.com/wp-content/uploads/2023/02/2-banana-bread-recipe-8-1.jpg", product_id: 3)
 # image = Image.create(url: "https://joyfoodsunshine.com/wp-content/uploads/2019/03/best-banana-bread-recipe-1x1-2-500x500.jpg", product_id: 3)
+
+# category = Category.create(name: "pasteries")
+# category = Category.create(name: "bread")
+
+# categoryproduct = CategoryProduct.create(product_id: 1, category_id: 1)
+# categoryproduct = CategoryProduct.create(product_id: 2, category_id: 1)
