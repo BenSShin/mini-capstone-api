@@ -16,11 +16,15 @@ class OrdersController < ApplicationController
   end
 
   def create
-    product = Product.find_by(id: params[:product_id])
-
-    calculated_subtotal = product.price * params[:quantity].to_i
+    carted_products = CartedProduct.where(user_id: current_user.id, status: "carted")
+    calculated_subtotal = 0
+    carted_products.each do |carted_product|
+      product = Product.find_by(id: carted_product.product_id)
+      product_subtotal = product.price * carted_product.quantity.to_i
+      calculated_subtotal += product_subtotal
+    end
     calculated_tax = calculated_subtotal * 0.09
-    calculated_total = calculated_subtotal + calculated_tax
+    calculated_total = calculated_tax + calculated_subtotal
 
     @order = Order.new(
       user_id: current_user.id,
@@ -30,6 +34,10 @@ class OrdersController < ApplicationController
     )
     if @order.save #happy path
       render :show
+      carted_products.update(
+        order_id: @order.id,
+        status: "purchased",
+      )
     else #sad path
       render json: { errors: @order.errors.full_message }
     end
