@@ -17,7 +17,14 @@ class CartedProductsController < ApplicationController
   end
 
   def index
-    @carted_products = CartedProduct.where(user_id: current_user.id)
+    @carted_products = current_user.carted_products.where(status: "carted")
     render :index
+  end
+
+  def destroy
+    carted_product = current_user.carted_products.find_by(id: params[:id], status: "carted")
+    pp carted_product
+    carted_product.update(status: "removed")
+    render json: { message: "Item(s) removed from cart." }
   end
 end
