@@ -7,12 +7,8 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find_by(id: params["id"])
-    if current_user.id && current_user.id == @order.user_id
-      render :show
-    else
-      render json: { message: "You may only view your own orders." }
-    end
+    @order = current_user.orders.find_by(id: params[:id])
+    render :show
   end
 
   def create
@@ -31,11 +27,11 @@ class OrdersController < ApplicationController
       total: calculated_total,
     )
     if @order.save #happy path
-      render :show
       carted_products.update(
         order_id: @order.id,
         status: "purchased",
       )
+      render :show
     else #sad path
       render json: { errors: @order.errors.full_message }
     end

@@ -1,6 +1,4 @@
 class CartedProductsController < ApplicationController
-  before_action :authenticate_user
-
   def create
     @carted_product = CartedProduct.create(
       user_id: current_user.id,
@@ -23,7 +21,6 @@ class CartedProductsController < ApplicationController
 
   def destroy
     carted_product = current_user.carted_products.find_by(id: params[:id], status: "carted")
-    pp carted_product
     carted_product.update(status: "removed")
     render json: { message: "Item(s) removed from cart." }
   end
