@@ -57,10 +57,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_29_181130) do
     t.string "name"
     t.decimal "price", precision: 9, scale: 2
     t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "in_stock"
     t.integer "supplier_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "suppliers", force: :cascade do |t|
@@ -79,5 +79,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_29_181130) do
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
   end
-
 end
